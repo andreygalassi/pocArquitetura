@@ -5,6 +5,17 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
+*.class
+*.log
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+.mtj.tmp/
 .apt_generated
 .classpath
 .factorypath
@@ -25,3 +36,4 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
