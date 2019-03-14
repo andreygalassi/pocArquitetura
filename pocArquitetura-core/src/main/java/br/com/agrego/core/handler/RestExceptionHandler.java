@@ -18,10 +18,10 @@ import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import br.com.agrego.tokenRest.error.ErrorDetails;
-import br.com.agrego.tokenRest.error.ResourceNotFoundDetails;
-import br.com.agrego.tokenRest.error.ResourceNotFoundException;
-import br.com.agrego.tokenRest.error.ValidationErrorDetails;
+import br.com.agrego.core.error.ErrorDetails;
+import br.com.agrego.core.error.ResourceNotFoundDetails;
+import br.com.agrego.core.error.ResourceNotFoundException;
+import br.com.agrego.core.error.ValidationErrorDetails;
 
 /**
  * Captura e trata as excessões lançadas nos controlles/endpoints

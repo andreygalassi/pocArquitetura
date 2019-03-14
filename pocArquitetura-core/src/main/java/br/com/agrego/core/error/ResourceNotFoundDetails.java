@@ -1,7 +1,5 @@
 package br.com.agrego.core.error;
 
-import br.com.agrego.tokenRest.error.ResourceNotFoundDetails.Builder;
-
 public class ResourceNotFoundDetails extends ErrorDetails {
 
 	public static final class Builder extends ErrorDetails.Builder {

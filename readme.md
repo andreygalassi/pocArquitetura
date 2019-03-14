@@ -29,3 +29,8 @@ Esse projeto se espelhar-a em arquitetura de microserviços, tentando separar to
     * api: projeto com os endpoints de apis rest. 
     * ws: projeto com os endpoints de apis soap.
     * web: projetos de paginas de acesso ao sistema.
+
+    
+    
+----
+Algumas coisas foram depreciadas entre a versão 1 e 2 do spring boot
