@@ -19,6 +19,9 @@ import javax.persistence.Transient;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import br.com.agrego.core.util.MyLog;
+
+//@MyLog(chave="Usuario")
 @Entity
 public class Usuario implements UserDetails, Serializable {
 	 

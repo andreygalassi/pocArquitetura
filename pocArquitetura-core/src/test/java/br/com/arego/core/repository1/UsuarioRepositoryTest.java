@@ -1,16 +1,21 @@
-package br.com.arego.core.repository;
+package br.com.arego.core.repository1;
+
+import java.util.List;
 
 import org.junit.Test;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.github.javafaker.Faker;
 
 import br.com.agrego.core.Application;
 import br.com.agrego.core.model.Usuario;
-import br.com.agrego.core.repository.UsuarioRepository;
+import br.com.agrego.core.repository1.UsuarioRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes=Application.class)
@@ -20,7 +25,15 @@ public class UsuarioRepositoryTest {
 	private UsuarioRepository usuarioRepository;
 	private Faker faker = new Faker();
 	
-	@Test
+//	@Test
+	public void teste() throws Exception {
+		deveInserirNovoUsuario();
+		deveInserirNovoUsuario();
+		deveInserirNovoUsuario();
+		
+//		devePesquisarPorExemplo();
+	}
+	
 	public void deveInserirNovoUsuario() throws Exception {
 		String nome = faker.gameOfThrones().character() + "@" + faker.gameOfThrones().dragon();
 		nome = nome.replace(" ", "_");
@@ -32,6 +45,20 @@ public class UsuarioRepositoryTest {
 		Usuario save = usuarioRepository.save(usuario);
 		
 		System.out.println(save);
+	}
+	
+	@Test
+	public void devePesquisarPorExemplo() {
+
+		Usuario usuario = new Usuario();
+//		usuario.setId(1l);
+		usuario.setNome("Boni%");
+		Example<Usuario> example = Example.of(usuario, ExampleMatcher.matchingAll());
+		
+		List<Usuario> findAll = usuarioRepository.findAll(example);
+		
+		System.out.println(findAll);
+		
 	}
 	
 	

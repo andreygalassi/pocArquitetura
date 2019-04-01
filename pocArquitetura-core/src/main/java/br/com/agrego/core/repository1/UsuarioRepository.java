@@ -1,4 +1,4 @@
-package br.com.agrego.core.repository;
+package br.com.agrego.core.repository1;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
