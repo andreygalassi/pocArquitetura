@@ -36,7 +36,7 @@ public class LivroServiceTest {
 		System.out.println(findAll);
 	}
 	
-	@Test
+//	@Test
 	public void testeFake() {
 		Faker faker1 = new Faker(new Random(2));
 		Faker faker2 = new Faker(new Random(2));
@@ -45,5 +45,26 @@ public class LivroServiceTest {
 		System.out.println(faker1.gameOfThrones().character());
 		System.out.println(faker1.gameOfThrones().character());
 		System.out.println(faker3.gameOfThrones().character());
+	}
+
+	@Test
+	public void testandoLombok() {
+
+		Livro livro = new Livro();
+		livro.setId(1l);
+		
+		Livro findOne = livroService.getRepo().findOne(1l);
+		
+		System.out.println(livro.hashCode());
+		System.out.println(findOne.hashCode());
+		System.out.println(findOne.equals(livro));
+		System.out.println(livro.toString());
+		System.out.println(findOne.toString());
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Long teste = 2l;
+		System.out.println(teste.hashCode());
 	}
 }
