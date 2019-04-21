@@ -26,7 +26,7 @@ public class LivroServiceTest {
 	private LivroService livroService;
 	private Faker faker = new Faker(new Random(2));
 
-//	@Test
+	@Test
 	public void teste() throws Exception {
 		
 		Livro livro = new Livro();
@@ -36,7 +36,7 @@ public class LivroServiceTest {
 		System.out.println(findAll);
 	}
 	
-//	@Test
+	@Test
 	public void testeFake() {
 		Faker faker1 = new Faker(new Random(2));
 		Faker faker2 = new Faker(new Random(2));
@@ -47,7 +47,7 @@ public class LivroServiceTest {
 		System.out.println(faker3.gameOfThrones().character());
 	}
 
-	@Test
+//	@Test
 	public void testandoLombok() {
 
 		Livro livro = new Livro();
@@ -66,5 +66,10 @@ public class LivroServiceTest {
 		// TODO Auto-generated method stub
 		Long teste = 2l;
 		System.out.println(teste.hashCode());
+		System.out.println(((2 >>> 32)));
+
+		Livro livro = new Livro();
+		livro.setId(2l);
+		System.out.println(livro.hashCode());
 	}
 }

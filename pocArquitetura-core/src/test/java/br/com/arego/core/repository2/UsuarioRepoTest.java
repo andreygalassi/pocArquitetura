@@ -34,7 +34,7 @@ public class UsuarioRepoTest {
 		LOGGER.info("Teste de log");
 	}
 	
-//	@Test
+	@Test
 	public void deveTestarPesquisaPaginada() {
 		PageRequest of = PageRequest.of(1, 2);
 		Page<Usuario> findAll = usuarioRepo.findAll(of);

@@ -11,12 +11,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.google.gson.Gson;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
  * Classe auxiliar para a gravação de logs/historico de alterações de registros
@@ -25,14 +30,15 @@ import com.google.gson.Gson;
  * @param <T>
  */
 @Entity
-@Table(name = "RTG_HISTORICO_WEB")
-@SequenceGenerator(name = "SEQ_HISTORICO", sequenceName = "SEQ_HISTORICO", initialValue = 1, allocationSize = 1)
+@Table(name = "CORE_HISTORICO")
+@Getter @Setter @NoArgsConstructor @ToString
+@EqualsAndHashCode(of = {"id"})
 public class Historico<T> implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_HISTORICO")
-	@Column(name = "ID_HISTORICO")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	/**
@@ -48,19 +54,11 @@ public class Historico<T> implements Serializable {
 	private Long idReferencia;
 
 	/**
-	 * nome do usuário que fez a alteração
+	 * nome do usuário/autor que fez a alteração
 	 */
 	@Column(name = "AGENTE", length = 20)
 	private String agente;
 	
-	public String getAgente() {
-		return agente;
-	}
-
-	public void setAgente(String agente) {
-		this.agente = agente;
-	}
-
 	/**
 	 * data da gravação do log
 	 */
@@ -92,51 +90,4 @@ public class Historico<T> implements Serializable {
 		return bean;
 	}
 	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getTabela() {
-		return tabela;
-	}
-
-	public void setTabela(String tabela) {
-		this.tabela = tabela;
-	}
-
-	public Long getIdReferencia() {
-		return idReferencia;
-	}
-
-	public void setIdReferencia(Long idReferencia) {
-		this.idReferencia = idReferencia;
-	}
-
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
-	public EnumAcao getAcao() {
-		return acao;
-	}
-
-	public void setAcao(EnumAcao acao) {
-		this.acao = acao;
-	}
-
-	public String getDocumento() {
-		return documento;
-	}
-
-	public void setDocumento(String documento) {
-		this.documento = documento;
-	}
 }
